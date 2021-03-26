@@ -1,6 +1,10 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
+const port = process.env.port;
+const express = require('express');
+
+const app = express();
 const db = require('quick.db')
 const bot = new Discord.Client({disableEveryone: true});
 
