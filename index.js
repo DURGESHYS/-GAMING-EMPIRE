@@ -42,6 +42,21 @@ bot.on("ready", async () => {
 	    prefix = botconfig.prefix;
 
 	    }
+		
+
+	
+
+	
+
+    }
+
+            return message.author.send(new Discord.MessageEmbed().setThumbnail(message.author.displayAvatarURL({dynamic:true})).setColor(`${Color}`).setDescription(`My Prefix Is \**${prefix}\**`).setTitle(`\**${message.author.username}\**`).setFooter(`MYPREFIX`, bot.user.displayAvatarURL())).then(m => {
+
+        m.delete({ timeout: 45000 })
+
+    });
+
+    };
     let messageArray = message.content.split(" ");
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
