@@ -30,8 +30,11 @@ fs.readdir("./commands/", (err, files) => {
 })
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`✬┊GAMING EMPIRE`);
-  bot.user.setStatus('dnd');
+  bot.user.setActivity("✬┊GAMING EMPIRE", {type: "STREAMING",
+
+                                     url: "https://www.twitch.tv/monstercat"
+
+                                    });
 
   bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
