@@ -39,6 +39,11 @@ bot.on("ready", async () => {
                                      url: "https://www.twitch.tv/monstercat"
 
                                     });
+	
+app.get('/', (req, res) => res.send(`${client.user.username} Bot is Online Now!`));
+
+app.listen(port, () => console.log(`${client.user.username} Bot is Hosting Now This PORT: ${port}`));
+
 
   bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
