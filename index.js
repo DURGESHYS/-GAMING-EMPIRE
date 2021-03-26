@@ -29,7 +29,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 })
 bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);
   bot.user.setActivity("✬┊GAMING EMPIRE", {type: "STREAMING",
 
                                      url: "https://www.twitch.tv/monstercat"
