@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 
     let embed = new Discord.RichEmbed()
     .setTitle("Money Man Help Centre [Prefix **${prefix}**]")
-    .addField("Economy Commands", "`work` `beg` `rob` `pay` `balance` `profile` `withdraw` `deposit` `daily` `weekly` `store` `buy` `sell`")
+    .addField("Economy Commands", "`work` `beg` `rob` `pay` `balance` `profile` `withdraw` `deposit` `daily` `weekly` `store` `buy` `sell` `prefix` `embed`")
     .addField("Gambling Commmands", "`roulette` `slots`")
     .addField("Economy Extra Commands", "`storeinfo [item]`")
     .setColor("#FFFFFF")
