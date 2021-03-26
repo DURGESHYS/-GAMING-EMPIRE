@@ -30,8 +30,8 @@ fs.readdir("./commands/", (err, files) => {
 })
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`In Development`);
-  bot.user.setStatus('online');
+  bot.user.setActivity(`✬┊GAMING EMPIRE`);
+  bot.user.setStatus('dnd');
 
   bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
