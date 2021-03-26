@@ -43,15 +43,11 @@ bot.on("ready", async () => {
 
 	    }
 	if(message.content === `<@${bot.user.id}>`) {
-            return message.channel.send(new Discord.MessageEmbed().setThumbnail(message.author.displayAvatarURL({dynamic:true})).setColor(`${Color}`).setDescription(`My Prefix Is \**${prefix}\**`).setTitle(`\**${message.author.username}\**`).setFooter(`MYPREFIX`, bot.user.displayAvatarURL()))
+            return message.channel.send(new Discord.MessageEmbed().setThumbnail(message.author.displayAvatarURL({dynamic:true})).setColor(`BLUE`).setDescription(`My Prefix Is \**${prefix}\**`).setTitle(`\**${message.author.username}\**`).setFooter(`MYPREFIX`, bot.user.displayAvatarURL()))
     };
-    const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const prefixRegex = new RegExp(`^(<@!?${bot.user.id}>|${escapeRegex(prefix)})\\s*`);
-
-    if(!prefixRegex.test(message.content)) return;
     const [, matchedPrefix] = message.content.match(prefixRegex);
     let messageArray = message.content.split(" ");
-    let args = message.content.slice(matchedPrefix.length).trim().split(/ +/g);
+    let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
     let commandfile;
 
