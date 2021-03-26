@@ -1,6 +1,7 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
+const db = require('quick.db')
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.commands = new Discord.Collection();
@@ -33,9 +34,14 @@ bot.on("ready", async () => {
   bot.user.setStatus('online');
 
   bot.on("message", async message => {
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
-    let prefix = botconfig.prefix
+    if(message.author.bot || message.channel.type === "dm") return;
+    let prefix = db.get(`prefix_${message.guild.id}`)
+
+    if(prefix === null) {
+
+	    prefix = botconfig.prefix;
+
+	    }
     let messageArray = message.content.split(" ");
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
