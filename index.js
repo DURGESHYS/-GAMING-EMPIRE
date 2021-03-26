@@ -40,9 +40,9 @@ bot.on("ready", async () => {
 
                                     });
 	
-app.get('/', (req, res) => res.send(`${client.user.username} Bot is Online Now!`));
+app.get('/', (req, res) => res.send(`${bot.user.username} Bot is Online Now!`));
 
-app.listen(port, () => console.log(`${client.user.username} Bot is Hosting Now This PORT: ${port}`));
+app.listen(port, () => console.log(`${bot.user.username} Bot is Hosting Now This PORT: ${port}`));
 
 
   bot.on("message", async message => {
