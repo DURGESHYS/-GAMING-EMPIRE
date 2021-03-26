@@ -45,7 +45,6 @@ bot.on("ready", async () => {
 	if(message.content === `<@${bot.user.id}>`) {
             return message.channel.send(new Discord.MessageEmbed().setThumbnail(message.author.displayAvatarURL({dynamic:true})).setColor(`BLUE`).setDescription(`My Prefix Is \**${prefix}\**`).setTitle(`\**${message.author.username}\**`).setFooter(`MYPREFIX`, bot.user.displayAvatarURL()))
     };
-    const [, matchedPrefix] = message.content.match(prefixRegex);
     let messageArray = message.content.split(" ");
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
